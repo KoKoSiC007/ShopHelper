@@ -9,7 +9,7 @@
 import UIKit
 import NMAKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 	
 	
 	var people:Person?
@@ -33,34 +33,51 @@ class MapViewController: UIViewController {
 	
 	
 	var currentZoom = 13.2
+	let locationManager = CLLocationManager()
+	var latitude:Double = 0.0
+	var longitude:Double = 0.0
 	
-	func mapSetup(){
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+		print("locations = \(type(of:locValue.latitude)) \(locValue.longitude)")
+		latitude = locValue.latitude
+		longitude = locValue.longitude
+	}
+
+	
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.locationManager.requestAlwaysAuthorization()
+		
+		// For use in foreground
+		self.locationManager.requestWhenInUseAuthorization()
+		
+		if CLLocationManager.locationServicesEnabled() {
+			locationManager.delegate = self
+			locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+			locationManager.startUpdatingLocation()
+		}
 		
 		map.gestureDelegate = self
 		map.useHighResolutionMap = true
 		map.zoomLevel = Float(currentZoom)
-		map.set(geoCenter: NMAGeoCoordinates(latitude: 55.740869, longitude: 37.545358),
-				animation: .linear)
+		print(locationManager.location?.coordinate.latitude)
+		map.set(geoCenter: NMAGeoCoordinates(latitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!),animation: .linear)
 		map.copyrightLogoPosition = .center
 		// Set zoom level
 		map.zoomLevel = NMAMapViewMaximumZoomLevel - 1
 		// Subscribe to position updates
-		NotificationCenter.default.addObserver(self,
-											   selector: #selector(MapViewController.didUpdatePosition),
-											   name: NSNotification.Name.NMAPositioningManagerDidUpdatePosition,
-											   object: NMAPositioningManager.shared())
+		//		NotificationCenter.default.addObserver(self,
+		//											   selector: #selector(MapViewController.didUpdatePosition),
+		//											   name: NSNotification.Name.NMAPositioningManagerDidUpdatePosition,
+		//											   object: NMAPositioningManager.shared())
 		
 		self.map.positionIndicator.isVisible = true
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		mapSetup()
 		let position = NMAPositioningManager.shared()
  		print(position.currentPosition)
 		
 	}
-	
 	func mapViewDidReceiveTap(_ map: NMAMapView, at location: CGPoint){
 		currentZoom -= 1
 		map.set(zoomLevel: Float(currentZoom), animation: .linear)

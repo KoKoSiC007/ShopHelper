@@ -17,7 +17,7 @@ struct NetConnection {
 	static func getConnection(param: Parameters, callback: @escaping (JSON?)->Void){
 		let globalURL = "http://37.21.54.126/json"
 		let localURL = "http://192.168.0.106/json"
-		guard let url = URL(string: localURL) else {
+		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
 		}
@@ -39,7 +39,7 @@ struct NetConnection {
 	static func post(param: Parameters){
 		let globalURL = "http://37.21.54.126/json"
 		let localURL = "http://192.168.0.106/json"
-		guard let url = URL(string: localURL) else {
+		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
 		}

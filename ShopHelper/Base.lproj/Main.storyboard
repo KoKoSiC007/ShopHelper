@@ -204,6 +204,11 @@
                                                 <action selector="back:" destination="hpR-sA-3Rg" id="Bi2-iw-ADq"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="update" id="ssH-UR-b8G">
+                                            <connections>
+                                                <action selector="update:" destination="hpR-sA-3Rg" id="pZb-Fx-AcW"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -301,4 +306,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="6ka-AF-hsU"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

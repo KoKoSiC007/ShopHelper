@@ -52,6 +52,13 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 	@IBAction func back(_ sender: UIBarButtonItem) {
 		performSegue(withIdentifier: "fromAccountToView", sender: self)
 	}
+	@IBAction func update(_ sender: UIBarButtonItem) {
+		guard let idP = people?.id else {
+			return
+		}
+		NetConnection.getConnection(param: ["do":"idlist","uid":idP], callback: loadingList(_:))
+		tableView.reloadData()
+	}
 	@IBOutlet weak var image: UIImageView!
 	@IBOutlet weak var login: UILabel!
 	@IBOutlet weak var name: UILabel!
