@@ -35,7 +35,7 @@ class Authorization: UIViewController {
 			return
 		}
 		passwordS = pass
-		NetConnection.getConnection(param: ["id":"login","login":loginS, "password":passwordS], callback: updatePeople(_:))
+		NetConnection.getConnection(param: ["do":"login","login":loginS, "password":passwordS], callback: updatePeople(_:))
 		
 	}
 	
@@ -44,14 +44,15 @@ class Authorization: UIViewController {
 			print("пустой Json")
 			return
 		}
+		var listOfPurchase = [Product]()
 		let products = json.arrayValue
 		for item in products{
 			let id = item["id"].stringValue
 			let name = item["name"].stringValue
 			let purchase = Product(id: id, name: name)
-			self.byeList?.append(purchase)
+			listOfPurchase.append(purchase)
 		}
-		print(self.byeList)
+		byeList = listOfPurchase
 		performSegue(withIdentifier: "toView", sender: self)
 	}
 	
@@ -77,7 +78,7 @@ class Authorization: UIViewController {
 			print("error with id ")
 			return
 		}
-		NetConnection.getConnection(param: ["id":"idlist","uid":id], callback: loadingList(_:))
+		NetConnection.getConnection(param: ["do":"idlist","uid":id], callback: loadingList(_:))
 		}
 		
 	

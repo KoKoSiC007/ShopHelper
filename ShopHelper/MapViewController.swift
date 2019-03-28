@@ -11,10 +11,23 @@ import NMAKit
 
 class MapViewController: UIViewController {
 	
+	
+	var people:Person?
+	var byeList:[Product]?
+	
 	@IBOutlet weak var nav: UINavigationBar!
 	@IBAction func back(_ sender: UIButton) {
 		performSegue(withIdentifier: "fromMapToView", sender: self)
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if case segue.identifier = "fromMapToView" {
+			let distVC: ViewController = segue.destination as! ViewController
+			distVC.people = people
+			distVC.byeList = byeList
+		}
+	}
+	
 	
 	 @IBOutlet weak var map:NMAMapView!
 	

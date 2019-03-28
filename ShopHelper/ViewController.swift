@@ -27,14 +27,17 @@ class ViewController: UIViewController {
 		if case segue.identifier = "toAccount" {
 			let distVC: AccountViewController = segue.destination as! AccountViewController
 			distVC.people = people
+			distVC.data = byeList
+		}
+		if case segue.identifier = "toMap" {
+			let distVC: MapViewController = segue.destination as! MapViewController
+			distVC.people = people
+			distVC.byeList = byeList
 		}
 	}
-	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		print(people)
-		print(byeList)
     }
 	
 	

@@ -12,10 +12,12 @@ import SwiftyJSON
 
 struct NetConnection {
 	
+	
+	
 	static func getConnection(param: Parameters, callback: @escaping (JSON?)->Void){
 		let globalURL = "http://37.21.54.126/json"
-		let localURL = "http://192.168.0.110/json"
-		guard let url = URL(string: globalURL) else {
+		let localURL = "http://192.168.0.106/json"
+		guard let url = URL(string: localURL) else {
 			print("Url error")
 			return
 		}
@@ -24,7 +26,7 @@ struct NetConnection {
 			switch response.result {
 			case .success( let data):
 				let json = JSON(data)
-				print(json)
+//				print(json)
 				callback(json)
 			case .failure(let error):
 				print("Downlouding error")
@@ -32,6 +34,16 @@ struct NetConnection {
 			}
 		})
 		
+	}
+	
+	static func post(param: Parameters){
+		let globalURL = "http://37.21.54.126/json"
+		let localURL = "http://192.168.0.106/json"
+		guard let url = URL(string: localURL) else {
+			print("Url error")
+			return
+		}
+		AF.request(url, method: .post, parameters: param)
 	}
 	
 }
