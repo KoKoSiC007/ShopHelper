@@ -12,15 +12,18 @@
 		C5551DD0224ACFFC002D6DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5551DCE224ACFFC002D6DFC /* Main.storyboard */; };
 		C5551DD2224ACFFD002D6DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5551DD1224ACFFD002D6DFC /* Assets.xcassets */; };
 		C5551DD5224ACFFD002D6DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5551DD3224ACFFD002D6DFC /* LaunchScreen.storyboard */; };
-		C5551DEC224AD5A2002D6DFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DE9224AD5A2002D6DFC /* Alamofire.framework */; };
-		C5551DED224AD5A2002D6DFC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DE9224AD5A2002D6DFC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5551DEE224AD5A2002D6DFC /* NMAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEA224AD5A2002D6DFC /* NMAKit.framework */; };
 		C5551DEF224AD5A2002D6DFC /* NMAKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEA224AD5A2002D6DFC /* NMAKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C5551DF0224AD5A2002D6DFC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEB224AD5A2002D6DFC /* SwiftyJSON.framework */; };
-		C5551DF1224AD5A2002D6DFC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEB224AD5A2002D6DFC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5551DF7224AD89B002D6DFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DF6224AD89B002D6DFC /* ViewController.swift */; };
 		C5551DF9224AD920002D6DFC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DF8224AD920002D6DFC /* Person.swift */; };
 		C5551DFB224ADAC8002D6DFC /* NetWorkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DFA224ADAC8002D6DFC /* NetWorkConnection.swift */; };
+		C5551E0F224AE3DD002D6DFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551E0B224AE3DD002D6DFC /* Alamofire.framework */; };
+		C5551E10224AE3DD002D6DFC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551E0B224AE3DD002D6DFC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5551E11224AE3DD002D6DFC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551E0C224AE3DD002D6DFC /* SwiftyJSON.framework */; };
+		C5551E12224AE3DD002D6DFC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551E0C224AE3DD002D6DFC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5551E16224AE860002D6DFC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E15224AE860002D6DFC /* AccountViewController.swift */; };
+		C5551E18224AEDA1002D6DFC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E17224AEDA1002D6DFC /* MapViewController.swift */; };
+		C5551E2D224C2F70002D6DFC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E2C224C2F6F002D6DFC /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,9 +33,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C5551E12224AE3DD002D6DFC /* SwiftyJSON.framework in Embed Frameworks */,
 				C5551DEF224AD5A2002D6DFC /* NMAKit.framework in Embed Frameworks */,
-				C5551DED224AD5A2002D6DFC /* Alamofire.framework in Embed Frameworks */,
-				C5551DF1224AD5A2002D6DFC /* SwiftyJSON.framework in Embed Frameworks */,
+				C5551E10224AE3DD002D6DFC /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,12 +50,15 @@
 		C5551DD1224ACFFD002D6DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5551DD4224ACFFD002D6DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5551DD6224ACFFD002D6DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5551DE9224AD5A2002D6DFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		C5551DEA224AD5A2002D6DFC /* NMAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMAKit.framework; sourceTree = "<group>"; };
-		C5551DEB224AD5A2002D6DFC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 		C5551DF6224AD89B002D6DFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C5551DF8224AD920002D6DFC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C5551DFA224ADAC8002D6DFC /* NetWorkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkConnection.swift; sourceTree = "<group>"; };
+		C5551E0B224AE3DD002D6DFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		C5551E0C224AE3DD002D6DFC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
+		C5551E15224AE860002D6DFC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C5551E17224AEDA1002D6DFC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C5551E2C224C2F6F002D6DFC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5551E11224AE3DD002D6DFC /* SwiftyJSON.framework in Frameworks */,
 				C5551DEE224AD5A2002D6DFC /* NMAKit.framework in Frameworks */,
-				C5551DEC224AD5A2002D6DFC /* Alamofire.framework in Frameworks */,
-				C5551DF0224AD5A2002D6DFC /* SwiftyJSON.framework in Frameworks */,
+				C5551E0F224AE3DD002D6DFC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +78,9 @@
 		C5551DBE224ACFFC002D6DFC = {
 			isa = PBXGroup;
 			children = (
-				C5551DE9224AD5A2002D6DFC /* Alamofire.framework */,
+				C5551E0B224AE3DD002D6DFC /* Alamofire.framework */,
+				C5551E0C224AE3DD002D6DFC /* SwiftyJSON.framework */,
 				C5551DEA224AD5A2002D6DFC /* NMAKit.framework */,
-				C5551DEB224AD5A2002D6DFC /* SwiftyJSON.framework */,
 				C5551DC9224ACFFC002D6DFC /* ShopHelper */,
 				C5551DC8224ACFFC002D6DFC /* Products */,
 			);
@@ -100,6 +106,9 @@
 				C5551DD6224ACFFD002D6DFC /* Info.plist */,
 				C5551DF8224AD920002D6DFC /* Person.swift */,
 				C5551DFA224ADAC8002D6DFC /* NetWorkConnection.swift */,
+				C5551E15224AE860002D6DFC /* AccountViewController.swift */,
+				C5551E17224AEDA1002D6DFC /* MapViewController.swift */,
+				C5551E2C224C2F6F002D6DFC /* Product.swift */,
 			);
 			path = ShopHelper;
 			sourceTree = "<group>";
@@ -177,10 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5551DF7224AD89B002D6DFC /* ViewController.swift in Sources */,
+				C5551E16224AE860002D6DFC /* AccountViewController.swift in Sources */,
 				C5551DFB224ADAC8002D6DFC /* NetWorkConnection.swift in Sources */,
 				C5551DCD224ACFFC002D6DFC /* Authorization.swift in Sources */,
+				C5551E2D224C2F70002D6DFC /* Product.swift in Sources */,
 				C5551DF9224AD920002D6DFC /* Person.swift in Sources */,
 				C5551DCB224ACFFC002D6DFC /* AppDelegate.swift in Sources */,
+				C5551E18224AEDA1002D6DFC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = local.test.ShopHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -361,7 +373,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = local.test.ShopHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

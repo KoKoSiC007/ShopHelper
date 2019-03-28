@@ -11,21 +11,33 @@ import UIKit
 class ViewController: UIViewController {
 	
 	var people:Person?
+	var byeList:[Product]?
 	
-	@IBAction func exit(_ sender: UIButton) {
-		performSegue(withIdentifier: "toAothorization", sender: self)
+	@IBAction func exit(_ sender: Any) {
+		performSegue(withIdentifier: "toAuthorization", sender: self)
 	}
-	@IBAction func toMap(_ sender: UIButton) {
+	@IBAction func toMap(_ sender: Any) {
+		performSegue(withIdentifier: "toMap", sender: self)
 	}
 	@IBAction func toAccaunt(_ sender: Any) {
+		performSegue(withIdentifier: "toAccount", sender: self)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if case segue.identifier = "toAccount" {
+			let distVC: AccountViewController = segue.destination as! AccountViewController
+			distVC.people = people
+		}
 	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+		print(people)
+		print(byeList)
     }
-    
+	
+	
 
     /*
     // MARK: - Navigation

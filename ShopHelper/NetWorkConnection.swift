@@ -12,21 +12,24 @@ import SwiftyJSON
 
 struct NetConnection {
 	
-	static func getConnection(param: Parameters, callback: @escaping (Data?)->Void){
+	static func getConnection(param: Parameters, callback: @escaping (JSON?)->Void){
 		let globalURL = "http://37.21.54.126/json"
-		let localURL = "http://192.168.0.107/json"
-		guard let url = URL(string: localURL) else {
+		let localURL = "http://192.168.0.110/json"
+		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
 		}
 		
-		AF.request(url, method: .post, parameters: param).response(completionHandler: {(response) in
-			guard let data = response.value else {
-				print("Error downloading data")
-				return
+		AF.request(url, method: .post, parameters: param).validate().responseJSON(completionHandler: {response in
+			switch response.result {
+			case .success( let data):
+				let json = JSON(data)
+				print(json)
+				callback(json)
+			case .failure(let error):
+				print("Downlouding error")
+				callback(nil)
 			}
-			print(data)
-			callback(data)
 		})
 		
 	}

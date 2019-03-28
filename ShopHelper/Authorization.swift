@@ -9,13 +9,16 @@
 import UIKit
 import SwiftyJSON
 
+class FBI: UIButton {
+	
+}
 
 class Authorization: UIViewController {
-
+	
 	var loginS:String = ""
 	var passwordS:String = ""
 	var people:Person?
-
+	var byeList:[Product]?
 	@IBOutlet weak var login: UILabel!
 	@IBOutlet weak var fieldLogin: UITextField!
 	@IBOutlet weak var password: UILabel!
@@ -32,43 +35,66 @@ class Authorization: UIViewController {
 			return
 		}
 		passwordS = pass
-		NetConnection.getConnection(param: ["login":loginS, "password":passwordS], callback: updatePeople(_:))
+		NetConnection.getConnection(param: ["id":"login","login":loginS, "password":passwordS], callback: updatePeople(_:))
+		
 	}
 	
-	func updatePeople(_ json: Data?) {
-		guard let json = json else {
-			print("Ошибка при выполнении запроса")
+	func loadingList(_ distJson: JSON?){
+		guard let json = distJson else {
+			print("пустой Json")
+			return
+		}
+		let products = json.arrayValue
+		for item in products{
+			let id = item["id"].stringValue
+			let name = item["name"].stringValue
+			let purchase = Product(id: id, name: name)
+			self.byeList?.append(purchase)
+		}
+		print(self.byeList)
+		performSegue(withIdentifier: "toView", sender: self)
+	}
+	
+	func updatePeople(_ distJson: JSON?) {
+		guard let json = distJson else {
+			let alertController = UIAlertController(title: "Alert", message: "Такой пользователь не найден попробуйте еще раз.", preferredStyle: .alert)
+			let action1 = UIAlertAction(title: "okey", style: .default)
+			alertController.addAction(action1)
+			self.present(alertController, animated: true, completion: nil)
 			return
 		}
 		
-//		let people = json.arrayValue
-//		print(people[0]["id"])
-//		for person in people {
-//			let login = person["login"].stringValue
-//			let password = person["password"].stringValue
-//			let name = person["name"].stringValue
-//			print(type(of: person["json"]))
-//			let list = person["json"].stringValue
-//
-//			let person = Person(login: login, password: password, name: name, list:list)
-//			self.people = person
-//		}
-		performSegue(withIdentifier: "toAccaunt", sender: self)
-	}
+		let people = json.arrayValue
+		for person in people {
+			let login = person["login"].stringValue
+			let name = person["name"].stringValue
+			let surname = person["surname"].stringValue
+			let id = person["id"].stringValue
+			let person = Person(login: login, name: name, surname: surname, id: id)
+			self.people = person
+		}
+		guard let id = self.people?.id else{
+			print("error with id ")
+			return
+		}
+		NetConnection.getConnection(param: ["id":"idlist","uid":id], callback: loadingList(_:))
+		}
+		
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if case segue.identifier = "toAccaunt" {
+		if case segue.identifier = "toView" {
 			let distVC: ViewController = segue.destination as! ViewController
 			distVC.people = people
+			distVC.byeList = byeList
 		}
 	}
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Do any additional setup after loading the view.
 	}
-
-
+	
+	
 }
 
