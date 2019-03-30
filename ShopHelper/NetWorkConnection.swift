@@ -12,11 +12,10 @@ import SwiftyJSON
 
 struct NetConnection {
 	
-	
+	//Интерфейс REST запросов
 	
 	static func getConnection(param: Parameters, callback: @escaping (JSON?)->Void){
 		let globalURL = "http://37.21.54.126/iosjson"
-		let localURL = "http://192.168.0.106/json"
 		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
@@ -26,9 +25,13 @@ struct NetConnection {
 			switch response.result {
 			case .success( let data):
 				let json = JSON(data)
-//				print(json)
+//				print(json)   отдебажить если хотите посмотреть что вернул сервер
 				callback(json)
-			case .failure(let error):
+			case .failure(_):
+				if let data = response.data {
+					print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
+				}
+			
 				print("Downlouding error")
 				callback(nil)
 			}
@@ -38,7 +41,6 @@ struct NetConnection {
 	
 	static func post(param: Parameters){
 		let globalURL = "http://37.21.54.126/iosjson"
-		let localURL = "http://192.168.0.106/json"
 		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
@@ -51,7 +53,7 @@ struct NetConnection {
 			switch response.result{
 			case .success(let data):
 				let json = JSON(data)
-//				print(json)
+//				print(json)    отдебажить если хотите посмотреть что вернул сервер
 				callback(json)
 			case .failure(_):
 				print("Downlouding Error")

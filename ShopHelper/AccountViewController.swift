@@ -13,6 +13,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 	
 	var data:[Product]?
 	
+	//Функция определяющяя количество ячеек в таблице
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		guard let mapItem = data else {
 			return 0
@@ -30,11 +31,11 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 		cell.textLabel?.text = mapItem[indexPath.row].name
 		return cell
 	}
-	
+	// Анимация при нажатии на ячейку
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
-	
+	//подключение удаления ячеек
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			let index = indexPath.row
@@ -47,7 +48,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 	}
 	
-
+	
 	@IBOutlet weak var nav: UINavigationBar!
 	@IBAction func back(_ sender: UIBarButtonItem) {
 		performSegue(withIdentifier: "fromAccountToView", sender: self)
@@ -84,7 +85,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	var people:Person?
 	var id:String?
-	
+	//Парсер данных которые отправил сервер
 	func loadingList(_ distJson: JSON?){
 		guard let json = distJson else {
 			print("пустой Json")
@@ -110,7 +111,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 	}
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "AccountViewController")
 		tableView.dataSource = self
 		tableView.allowsSelection = true
@@ -122,20 +123,17 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 		}
 		login.text = human.login
 		name.text = human.name
-		
-		
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	}
+	
+	
+	/*
+	// MARK: - Navigation
+	
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	// Get the new view controller using segue.destination.
+	// Pass the selected object to the new view controller.
+	}
+	*/
+	
 }

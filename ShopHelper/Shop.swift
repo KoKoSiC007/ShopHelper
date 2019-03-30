@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//Структура одного магазина
 struct Shop {
 	var	name:String
 	var geoLock: Location

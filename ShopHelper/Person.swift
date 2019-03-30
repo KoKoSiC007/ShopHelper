@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//Структура пользователя загруженного с сервера 
 struct Person {
 	var Discription : String{
 		get {

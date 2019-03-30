@@ -57,9 +57,6 @@ class MapViewController: UIViewController {
 			print("Пустой Json")
 			return
 		}
-//		print(json)
-		var data = json.arrayValue
-		print(data)
 		
 		for i in 0...20{
 			shops.append(Shop(name: json["results"]["items"][i]["title"].stringValue, latitude: json["results"]["items"][i]["position"][0].doubleValue, longitude: json["results"]["items"][i]["position"][1].doubleValue))
@@ -74,17 +71,17 @@ class MapViewController: UIViewController {
 		map.add(marker)
 	}
 	
-	
+	//функция слушатель запускается когда обновляются координаты телефона или view загружается первый рас
 	@objc func positionDidUpdate(){
 		if let p = NMAPositioningManager.shared().currentPosition {
-//			map.set(geoCenter: p.coordinates, animation: .linear)
+//			map.set(geoCenter: p.coordinates, animation: .linear)  раздебажить если хотите установить центр экрана на текуших координатах
 			location.longitude = p.coordinates.longitude
 			location.latitude = p.coordinates.latitude
 			print("\(p.coordinates.latitude) \(p.coordinates.longitude)")
 			var minLength: Double = measure(lat1: location.latitude, lon1: location.longitude, lat2: shops[0].geoLock.latitude, lon2: shops[0].geoLock.longitude)
 			var minName: String = shops[0].name
-			var minLat: Double
-			var minLong: Double
+			var minLat: Double?
+			var minLong: Double?
 			for path in shops{
 				if minLength >= measure(lat1: location.latitude, lon1: location.longitude, lat2: path.geoLock.latitude, lon2: path.geoLock.longitude){
 					minLength = measure(lat1: location.latitude, lon1: location.longitude, lat2: path.geoLock.latitude, lon2: path.geoLock.longitude)
@@ -93,12 +90,12 @@ class MapViewController: UIViewController {
 					minLong = path.geoLock.longitude
 				}
 			}
-			
-//			print("Ближайший магазин(\(minName)) находится в \(minLength) метрах")
-			var finish = Date()
-			var executionTime = finish.timeIntervalSince(date)
+	
+			let finish = Date()
+			let executionTime = finish.timeIntervalSince(date)
 			print("time execute: \(executionTime)")
-			guard let data = byeList else{
+//			print(byeList)
+			guard byeList != nil else{
 				if flag {
 					flag = !flag
 					let alertController = UIAlertController(title: "Упс", message: "Похоже у вас нет запланированых покупок.", preferredStyle: .alert)
@@ -114,6 +111,7 @@ class MapViewController: UIViewController {
 			
 			if flag {
 				flag = !flag
+				addMarker(shop: Shop(name: minName, latitude: minLat!, longitude: minLong!))
 				let alertController = UIAlertController(title: "Упс", message: "Ближайший магазин \(minName) находится в \(Int(minLength)) метрах от вас.", preferredStyle: .alert)
 				let action1 = UIAlertAction(title: "okey", style: .default)
 				alertController.addAction(action1)
@@ -141,5 +139,6 @@ class MapViewController: UIViewController {
 	
 	
 }
+//для работы с нажатием пользователя на карте
 extension MapViewController: NMAMapGestureDelegate{
 }
