@@ -14,11 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
+	let credentials = (
+		appId: "0tcDInPDhVWb6ROpa5ry",
+		appCode: "hdiWUWqXQa9RmLMf670r_Q",
+		licenseKey: "hA9swLydtUzeENQN2Z/w00YZreymxwH2rcGF8JHaLGzWst0nxkHfbjEnMZd5Qe8HyaEcn6jmjDHmmz5MTDRSzrcpC6FFoFmFE88hZwDgnUFbDMtRQDnMROfAh4fWu2as53DnKEacjZlZgVf/074V345lip7QVXN8HAIe0+5OiGAYdnthyxZwAoGsRtxseOzTCTkgwC+3YGa4K5OtduS0YID2fo+KVbhujPyx1Ac3AOjlUCy7tRXIkUb66uZwCTWnNkzSw/4ZKFh2fyztJQG+QHKiDjjq0j28Yx4Ku8Ogc2GP20TywJBTv+mP2CwV6GQHJGz8htY8vnh1zVYhXLyc+PJaS6j7x4i3T28CfbfhxtCfbVdvKv+SUA8cLNT3u2/0eRCmsnRCMexyw/+qgXyNHKaKrC+Xb4lJJJYyePM3WZGtds61Aojece6+WXxiDMRcfmCaHOWWfIq1mqTTXubErPLjcjXGOYNMRbHvUwRl3ZwdnixhxKArhtDcqNRWI7uIA0ITmWVaOJtaG0SPXihBmGWl0A3ArM5QApSzfLSKYKd6kGyCCl6DEBzJ/rl6zwEhhsWjKhHL3hAFBoX0FHKTFtZZlVcUOXstbpxYtea1QCXt5c7Khbl3wo87vx/yx+1caTH6prs5fO93vDiBJ7NzMMhGJXzV+AlVini8FzYCX9g="
+	)
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		NMAApplicationContext.set(appId: "0tcDInPDhVWb6ROpa5ry",
-								  appCode: "hdiWUWqXQa9RmLMf670r_Q")
+		NMAApplicationContext.set(appId: credentials.appId, appCode: credentials.appCode)
+		
 		return true
 	}
 

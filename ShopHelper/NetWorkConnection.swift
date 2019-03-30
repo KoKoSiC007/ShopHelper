@@ -15,7 +15,7 @@ struct NetConnection {
 	
 	
 	static func getConnection(param: Parameters, callback: @escaping (JSON?)->Void){
-		let globalURL = "http://37.21.54.126/json"
+		let globalURL = "http://37.21.54.126/iosjson"
 		let localURL = "http://192.168.0.106/json"
 		guard let url = URL(string: globalURL) else {
 			print("Url error")
@@ -37,13 +37,26 @@ struct NetConnection {
 	}
 	
 	static func post(param: Parameters){
-		let globalURL = "http://37.21.54.126/json"
+		let globalURL = "http://37.21.54.126/iosjson"
 		let localURL = "http://192.168.0.106/json"
 		guard let url = URL(string: globalURL) else {
 			print("Url error")
 			return
 		}
 		AF.request(url, method: .post, parameters: param)
+	}
+	
+	static func rest(url:String, callback: @escaping (JSON?) -> Void){
+		AF.request(url).validate().responseJSON(completionHandler: {response in
+			switch response.result{
+			case .success(let data):
+				let json = JSON(data)
+//				print(json)
+				callback(json)
+			case .failure(_):
+				print("Downlouding Error")
+			}
+		})
 	}
 	
 }

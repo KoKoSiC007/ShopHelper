@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733E37866A1B17B6968B548C /* libPods-ShopHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9048320D8BAED22FD628E490 /* libPods-ShopHelper.a */; };
 		C5551DCB224ACFFC002D6DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DCA224ACFFC002D6DFC /* AppDelegate.swift */; };
 		C5551DCD224ACFFC002D6DFC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DCC224ACFFC002D6DFC /* Authorization.swift */; };
 		C5551DD0224ACFFC002D6DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5551DCE224ACFFC002D6DFC /* Main.storyboard */; };
 		C5551DD2224ACFFD002D6DFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5551DD1224ACFFD002D6DFC /* Assets.xcassets */; };
 		C5551DD5224ACFFD002D6DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5551DD3224ACFFD002D6DFC /* LaunchScreen.storyboard */; };
-		C5551DEE224AD5A2002D6DFC /* NMAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEA224AD5A2002D6DFC /* NMAKit.framework */; };
-		C5551DEF224AD5A2002D6DFC /* NMAKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5551DEA224AD5A2002D6DFC /* NMAKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5551DF7224AD89B002D6DFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DF6224AD89B002D6DFC /* ViewController.swift */; };
 		C5551DF9224AD920002D6DFC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DF8224AD920002D6DFC /* Person.swift */; };
 		C5551DFB224ADAC8002D6DFC /* NetWorkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551DFA224ADAC8002D6DFC /* NetWorkConnection.swift */; };
@@ -24,6 +23,11 @@
 		C5551E16224AE860002D6DFC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E15224AE860002D6DFC /* AccountViewController.swift */; };
 		C5551E18224AEDA1002D6DFC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E17224AEDA1002D6DFC /* MapViewController.swift */; };
 		C5551E2D224C2F70002D6DFC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E2C224C2F6F002D6DFC /* Product.swift */; };
+		C5551E32224E2CFF002D6DFC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C5551E31224E2CFF002D6DFC /* Podfile */; };
+		C5551E3B224E779B002D6DFC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E3A224E779B002D6DFC /* Location.swift */; };
+		C5551E3D224E7CD9002D6DFC /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = C5551E3C224E7CD9002D6DFC /* marker.png */; };
+		C5551E3F224EB434002D6DFC /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5551E3E224EB434002D6DFC /* Shop.swift */; };
+		C5551E41224F621E002D6DFC /* minMarckerpng.png in Resources */ = {isa = PBXBuildFile; fileRef = C5551E40224F621E002D6DFC /* minMarckerpng.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +38,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C5551E12224AE3DD002D6DFC /* SwiftyJSON.framework in Embed Frameworks */,
-				C5551DEF224AD5A2002D6DFC /* NMAKit.framework in Embed Frameworks */,
 				C5551E10224AE3DD002D6DFC /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -43,6 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65D1F1E26AB016162A528B57 /* Pods-ShopHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopHelper/Pods-ShopHelper.release.xcconfig"; sourceTree = "<group>"; };
+		9048320D8BAED22FD628E490 /* libPods-ShopHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShopHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05D2E820CDF2524AF47B072 /* Pods-ShopHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopHelper/Pods-ShopHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		C5551DC7224ACFFC002D6DFC /* ShopHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5551DCA224ACFFC002D6DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5551DCC224ACFFC002D6DFC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
@@ -50,7 +56,6 @@
 		C5551DD1224ACFFD002D6DFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5551DD4224ACFFD002D6DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5551DD6224ACFFD002D6DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5551DEA224AD5A2002D6DFC /* NMAKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMAKit.framework; sourceTree = "<group>"; };
 		C5551DF6224AD89B002D6DFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C5551DF8224AD920002D6DFC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C5551DFA224ADAC8002D6DFC /* NetWorkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkConnection.swift; sourceTree = "<group>"; };
@@ -59,6 +64,11 @@
 		C5551E15224AE860002D6DFC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		C5551E17224AEDA1002D6DFC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C5551E2C224C2F6F002D6DFC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C5551E31224E2CFF002D6DFC /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		C5551E3A224E779B002D6DFC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C5551E3C224E7CD9002D6DFC /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		C5551E3E224EB434002D6DFC /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		C5551E40224F621E002D6DFC /* minMarckerpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minMarckerpng.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,22 +77,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5551E11224AE3DD002D6DFC /* SwiftyJSON.framework in Frameworks */,
-				C5551DEE224AD5A2002D6DFC /* NMAKit.framework in Frameworks */,
 				C5551E0F224AE3DD002D6DFC /* Alamofire.framework in Frameworks */,
+				733E37866A1B17B6968B548C /* libPods-ShopHelper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A58500A6593C93D2A3327380 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9048320D8BAED22FD628E490 /* libPods-ShopHelper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C5551DBE224ACFFC002D6DFC = {
 			isa = PBXGroup;
 			children = (
+				C5551E31224E2CFF002D6DFC /* Podfile */,
 				C5551E0B224AE3DD002D6DFC /* Alamofire.framework */,
 				C5551E0C224AE3DD002D6DFC /* SwiftyJSON.framework */,
-				C5551DEA224AD5A2002D6DFC /* NMAKit.framework */,
 				C5551DC9224ACFFC002D6DFC /* ShopHelper */,
 				C5551DC8224ACFFC002D6DFC /* Products */,
+				F12B9D573D5B90DB59530046 /* Pods */,
+				A58500A6593C93D2A3327380 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +117,8 @@
 		C5551DC9224ACFFC002D6DFC /* ShopHelper */ = {
 			isa = PBXGroup;
 			children = (
+				C5551E3C224E7CD9002D6DFC /* marker.png */,
+				C5551E40224F621E002D6DFC /* minMarckerpng.png */,
 				C5551DCA224ACFFC002D6DFC /* AppDelegate.swift */,
 				C5551DCC224ACFFC002D6DFC /* Authorization.swift */,
 				C5551DF6224AD89B002D6DFC /* ViewController.swift */,
@@ -109,8 +131,19 @@
 				C5551E15224AE860002D6DFC /* AccountViewController.swift */,
 				C5551E17224AEDA1002D6DFC /* MapViewController.swift */,
 				C5551E2C224C2F6F002D6DFC /* Product.swift */,
+				C5551E3A224E779B002D6DFC /* Location.swift */,
+				C5551E3E224EB434002D6DFC /* Shop.swift */,
 			);
 			path = ShopHelper;
+			sourceTree = "<group>";
+		};
+		F12B9D573D5B90DB59530046 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B05D2E820CDF2524AF47B072 /* Pods-ShopHelper.debug.xcconfig */,
+				65D1F1E26AB016162A528B57 /* Pods-ShopHelper.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,10 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5551DD9224ACFFD002D6DFC /* Build configuration list for PBXNativeTarget "ShopHelper" */;
 			buildPhases = (
+				24B11A3477068F99880D791D /* [CP] Check Pods Manifest.lock */,
 				C5551DC3224ACFFC002D6DFC /* Sources */,
 				C5551DC4224ACFFC002D6DFC /* Frameworks */,
 				C5551DC5224ACFFC002D6DFC /* Resources */,
 				C5551DF2224AD5A2002D6DFC /* Embed Frameworks */,
+				EAB6E59081E51FE6FFE4495D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,13 +207,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5551E41224F621E002D6DFC /* minMarckerpng.png in Resources */,
 				C5551DD5224ACFFD002D6DFC /* LaunchScreen.storyboard in Resources */,
+				C5551E3D224E7CD9002D6DFC /* marker.png in Resources */,
 				C5551DD2224ACFFD002D6DFC /* Assets.xcassets in Resources */,
+				C5551E32224E2CFF002D6DFC /* Podfile in Resources */,
 				C5551DD0224ACFFC002D6DFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24B11A3477068F99880D791D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShopHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB6E59081E51FE6FFE4495D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShopHelper/Pods-ShopHelper-frameworks.sh",
+				"${PODS_ROOT}/HEREMapsStarter/framework/NMAKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMAKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShopHelper/Pods-ShopHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C5551DC3224ACFFC002D6DFC /* Sources */ = {
@@ -188,7 +273,9 @@
 				C5551DF7224AD89B002D6DFC /* ViewController.swift in Sources */,
 				C5551E16224AE860002D6DFC /* AccountViewController.swift in Sources */,
 				C5551DFB224ADAC8002D6DFC /* NetWorkConnection.swift in Sources */,
+				C5551E3F224EB434002D6DFC /* Shop.swift in Sources */,
 				C5551DCD224ACFFC002D6DFC /* Authorization.swift in Sources */,
+				C5551E3B224E779B002D6DFC /* Location.swift in Sources */,
 				C5551E2D224C2F70002D6DFC /* Product.swift in Sources */,
 				C5551DF9224AD920002D6DFC /* Person.swift in Sources */,
 				C5551DCB224ACFFC002D6DFC /* AppDelegate.swift in Sources */,
@@ -336,6 +423,7 @@
 		};
 		C5551DDA224ACFFD002D6DFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B05D2E820CDF2524AF47B072 /* Pods-ShopHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -343,6 +431,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/HEREMapsStarter/framework",
 				);
 				INFOPLIST_FILE = ShopHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +447,7 @@
 		};
 		C5551DDB224ACFFD002D6DFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65D1F1E26AB016162A528B57 /* Pods-ShopHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +455,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/HEREMapsStarter/framework",
 				);
 				INFOPLIST_FILE = ShopHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -56,6 +56,7 @@ class Authorization: UIViewController {
 		performSegue(withIdentifier: "toView", sender: self)
 	}
 	
+	
 	func updatePeople(_ distJson: JSON?) {
 		guard let json = distJson else {
 			let alertController = UIAlertController(title: "Alert", message: "Такой пользователь не найден попробуйте еще раз.", preferredStyle: .alert)
